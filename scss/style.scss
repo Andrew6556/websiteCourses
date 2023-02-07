@@ -4,6 +4,7 @@
 @import "__font.scss";
 
 
+
 body{
     font-family: $Roboto;
 }
@@ -37,7 +38,7 @@ body{
     font-weight: 500;
     height: 55px;
     padding: 0px 45px;
-    color: #000;
+    color: $clBlack;
     border:1px solid rgba(0, 0, 0, 1);
     border-radius: 40px;
     transition:all 1s ease-out 0s;
@@ -55,8 +56,8 @@ body{
     padding: 0px 42px 0 63px;
     border-radius: 30px;
     box-shadow: 2px 1px 3px $clBlack;
-    transition:all 500ms ease-in-out 0s;
-    animation: btnAnimation 700ms ease-in-out 0s alternate infinite none;
+    transition:all 600ms ease-in-out 0s;
+    animation: btnAnimation 850ms ease-in-out 0s alternate infinite none;
     @include animation-mixin(btnAnimation,$bgRed,#b89fa2c4);
     &:hover{
         animation-play-state:paused;
@@ -71,6 +72,10 @@ body{
 .block {
     width: 362px;
     box-shadow: 3px 3px 0px rgba(26, 25, 25, 0.089);
+    transition:box-shadow 800ms ease-out 0s;
+    &:hover{
+        box-shadow: 4px 4px 23px rgba(26, 25, 25, 0.562)
+    }
 }
 .block__inner {
     padding:30px;
@@ -127,7 +132,7 @@ body{
                 font-weight: 500;
                 transition: 200ms ease-in 0s;
                 &:hover{
-                    @include hvLink($clBlack)
+                    @extend %hoverlink;
                 }
             }
             @include media(400px){
@@ -655,7 +660,7 @@ body{
             color: inherit;
             margin-bottom: 10px;
             &:hover{
-                @include hvLink($clBlack)
+                @extend %hoverlink
             }
         }
     }
@@ -682,7 +687,7 @@ body{
         &-link{
             color: inherit;
             &:hover{
-                @include hvLink($clBlack)
+                @extend %hoverlink
             }
         }
     }
