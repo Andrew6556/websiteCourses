@@ -262,6 +262,11 @@ body {
   color: inherit;
   font-size: 16px;
   font-weight: 500;
+  transition: 200ms ease-in 0s;
+}
+.header .navbar-menu__link:hover {
+  color: black;
+  text-decoration: underline;
 }
 @media screen and (max-width: 400px) {
   .header .navbar-menu__item:not(:last-child) {
@@ -813,6 +818,10 @@ body {
   color: inherit;
   margin-bottom: 10px;
 }
+.footer__contacts-link:hover {
+  color: black;
+  text-decoration: underline;
+}
 .footer__support {
   display: flex;
   flex-wrap: wrap;
@@ -840,6 +849,10 @@ body {
 }
 .footer__support-link {
   color: inherit;
+}
+.footer__support-link:hover {
+  color: black;
+  text-decoration: underline;
 }
 .footer__copyright {
   display: flex;
