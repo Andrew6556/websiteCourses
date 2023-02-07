@@ -1,3 +1,14 @@
+// ___переменные___
+$OpenSans:'Open Sans', sans-serif;
+$Roboto:'Roboto', sans-serif;
+
+// ___font___
+$bgRed:RGBA(171, 5, 52, 1);
+$clBlackTitle:#010101;
+$clGrey:#4D4D4D;
+$clBlack:#0000;
+// ___mixin___
+
 @mixin container($width){
     max-width: $width;
     margin: 0 auto;
@@ -28,29 +39,16 @@
     text-decoration: underline;
 }
 // animation
-@mixin animation-mixin($name, $toCl,$cl50, $fromCl) {
+@mixin animation-mixin($name, $toCl, $fromCl) {
     @keyframes #{$name} {
         0% {
             background: $toCl;
-        }
-        50%{
-            background: $cl50;
+            border: 1px solid $clBlack;
         }
         100% {
             background: $fromCl;
+            border: 2px solid #fff;
         }
     }
 }
-@mixin animation-color($name, $toCl,$cl50, $fromCl) {
-    @keyframes #{$name} {
-        0% {
-            color: $toCl;
-        }
-        50%{
-            color: $cl50;
-        }
-        100% {
-            color: $fromCl;
-        }
-    }
-}
+

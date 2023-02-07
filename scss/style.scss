@@ -1,18 +1,13 @@
 // import
 @import "__resetSetting";
-@import "__basicMixin";
+@import "__basicMixin.scss";
 @import "__font.scss";
-// ___переменные___
-$OpenSans:'Open Sans', sans-serif;
-$Roboto:'Roboto', sans-serif;
-// ___font___
-$bgRed:RGBA(171, 5, 52, 1);
-$clBlackTitle:#010101;
-$clGrey:#4D4D4D;
+
 
 body{
     font-family: $Roboto;
 }
+
 //блоки
 .wrapper{
     width: 100%;
@@ -42,6 +37,7 @@ body{
     font-weight: 500;
     height: 55px;
     padding: 0px 45px;
+    color: #000;
     border:1px solid rgba(0, 0, 0, 1);
     border-radius: 40px;
     transition:all 1s ease-out 0s;
@@ -58,13 +54,10 @@ body{
     height: 71px;
     padding: 0px 42px 0 63px;
     border-radius: 30px;
-    box-shadow: 2px 1px 3px black;
+    box-shadow: 2px 1px 3px $clBlack;
     transition:all 500ms ease-in-out 0s;
-    animation: btnAnimation 1.2s ease-in-out 0s alternate infinite none,btnCl 1.2s ease-in-out 0s alternate infinite none;
-    @include animation-mixin(btnAnimation,$bgRed,#ab2035c4, #0D2341);
-    @include animation-color(
-        btnCl, #ffff, #ffff, #000
-    );
+    animation: btnAnimation 700ms ease-in-out 0s alternate infinite none;
+    @include animation-mixin(btnAnimation,$bgRed,#b89fa2c4);
     &:hover{
         animation-play-state:paused;
         box-shadow: 2px 3px 3px #ffff;
@@ -134,7 +127,7 @@ body{
                 font-weight: 500;
                 transition: 200ms ease-in 0s;
                 &:hover{
-                    @include hvLink(black)
+                    @include hvLink($clBlack)
                 }
             }
             @include media(400px){
@@ -662,7 +655,7 @@ body{
             color: inherit;
             margin-bottom: 10px;
             &:hover{
-                @include hvLink(black)
+                @include hvLink($clBlack)
             }
         }
     }
@@ -689,7 +682,7 @@ body{
         &-link{
             color: inherit;
             &:hover{
-                @include hvLink(black)
+                @include hvLink($clBlack)
             }
         }
     }

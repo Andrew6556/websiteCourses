@@ -115,6 +115,7 @@ body {
   font-weight: 500;
   height: 55px;
   padding: 0px 45px;
+  color: #000;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 40px;
   transition: all 1s ease-out 0s;
@@ -134,58 +135,22 @@ body {
   height: 71px;
   padding: 0px 42px 0 63px;
   border-radius: 30px;
-  box-shadow: 2px 1px 3px black;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, 0);
   transition: all 500ms ease-in-out 0s;
-  -webkit-animation: btnAnimation 1.2s ease-in-out 0s alternate infinite none, btnCl 1.2s ease-in-out 0s alternate infinite none;
-          animation: btnAnimation 1.2s ease-in-out 0s alternate infinite none, btnCl 1.2s ease-in-out 0s alternate infinite none;
-}
-@-webkit-keyframes btnAnimation {
-  0% {
-    background: RGBA(171, 5, 52, 1);
-  }
-  50% {
-    background: rgba(171, 32, 53, 0.768627451);
-  }
-  100% {
-    background: #0D2341;
-  }
+  animation: btnAnimation 700ms ease-in-out 0s alternate infinite none;
 }
 @keyframes btnAnimation {
   0% {
     background: RGBA(171, 5, 52, 1);
-  }
-  50% {
-    background: rgba(171, 32, 53, 0.768627451);
+    border: 1px solid rgba(0, 0, 0, 0);
   }
   100% {
-    background: #0D2341;
-  }
-}
-@-webkit-keyframes btnCl {
-  0% {
-    color: white;
-  }
-  50% {
-    color: white;
-  }
-  100% {
-    color: #000;
-  }
-}
-@keyframes btnCl {
-  0% {
-    color: white;
-  }
-  50% {
-    color: white;
-  }
-  100% {
-    color: #000;
+    background: rgba(184, 159, 162, 0.768627451);
+    border: 2px solid #fff;
   }
 }
 .btn__red:hover {
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
   box-shadow: 2px 3px 3px white;
 }
 @media screen and (max-width: 400px) {
@@ -265,7 +230,7 @@ body {
   transition: 200ms ease-in 0s;
 }
 .header .navbar-menu__link:hover {
-  color: black;
+  color: rgba(0, 0, 0, 0);
   text-decoration: underline;
 }
 @media screen and (max-width: 400px) {
@@ -819,7 +784,7 @@ body {
   margin-bottom: 10px;
 }
 .footer__contacts-link:hover {
-  color: black;
+  color: rgba(0, 0, 0, 0);
   text-decoration: underline;
 }
 .footer__support {
@@ -851,7 +816,7 @@ body {
   color: inherit;
 }
 .footer__support-link:hover {
-  color: black;
+  color: rgba(0, 0, 0, 0);
   text-decoration: underline;
 }
 .footer__copyright {
