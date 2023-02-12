@@ -71,12 +71,16 @@ body{
 }
 // block
 .block {
-    width: 362px;
+    flex: 0 1 362px;
     box-shadow: 3px 3px 0px rgba(26, 25, 25, 0.089);
     transition: box-shadow 800ms ease-out 0s;
+    @include media(1150px){
+        flex: 1 1 362px;
+    }
     &__img{
         position: relative;
         img{
+            object-fit: contain;
             width: 100%;
         }
     }
@@ -86,7 +90,7 @@ body{
         top: 0;
         left: 0;
         width: 100%;
-        height: 182px;
+        height: 100%;
         opacity: 0.7;
         background: #882334;
         background-image: url("../img/courses/crossHover.svg");
@@ -98,6 +102,9 @@ body{
     }
     &__inner {
         padding:30px;
+        @include media(800px){
+            text-align: center;
+        }
     }
     &__title {
         font-size: 18px;
@@ -283,6 +290,9 @@ body{
     }
     &__block{
         margin-bottom: 30px;
+        @include media(1150px){
+            margin: 0px 10px 30px 10px;
+        }
         &-title{
             margin-bottom: 34px;
         }
@@ -359,7 +369,10 @@ body{
         }
     }
     &__block{
-        margin-bottom: 30px;        
+        margin-bottom: 30px; 
+        @include media(1150px){
+            margin: 0px 10px 30px 10px;
+        }       
     }
     &__title {
         margin-bottom: 30px;
@@ -394,10 +407,19 @@ body{
         }
     }
     &__card {
-        max-width: 378px;
+        width: 378px;
         padding: 70px 0;
         text-align: center;
         margin-bottom: 25px;
+        @include media(1100px){
+            margin: 0 10px 25px 10px;
+        }
+        @include media(800px){
+            flex: 0 0 auto;
+        }
+    }
+    &__card-text{
+        padding: 0 10px;
     }
     &__card-img {
         margin-bottom: 32px;
@@ -560,12 +582,20 @@ body{
         }
     }
     &__block:not(:last-child){
-        margin-right: 43px;
-        @include media(1080px){
-            margin: 0 0px 30px 0;
+        margin-right: 40px;
+    }
+    @include media(1080px){
+        &__block:nth-child(1){
+            display: none;
         }
-        @include media(755px){
-            margin: 0 0px 30px 0;
+    }
+    @include media(800px){
+        &__block{
+            flex: 0 0 362px;
+            margin-right: 0;
+            &:nth-child(2){
+                display: none;
+            }
         }
     }
     &__info {

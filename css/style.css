@@ -172,14 +172,21 @@ body {
 }
 
 .block {
-  width: 362px;
+  flex: 0 1 362px;
   box-shadow: 3px 3px 0px rgba(26, 25, 25, 0.089);
   transition: box-shadow 800ms ease-out 0s;
+}
+@media screen and (max-width: 1150px) {
+  .block {
+    flex: 1 1 362px;
+  }
 }
 .block__img {
   position: relative;
 }
 .block__img img {
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 .block:hover .block__img::before {
@@ -188,7 +195,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 182px;
+  height: 100%;
   opacity: 0.7;
   background: #882334;
   background-image: url("../img/courses/crossHover.svg");
@@ -200,6 +207,11 @@ body {
 }
 .block__inner {
   padding: 30px;
+}
+@media screen and (max-width: 800px) {
+  .block__inner {
+    text-align: center;
+  }
 }
 .block__title {
   font-size: 18px;
@@ -387,6 +399,11 @@ body {
 .courses__block {
   margin-bottom: 30px;
 }
+@media screen and (max-width: 1150px) {
+  .courses__block {
+    margin: 0px 10px 30px 10px;
+  }
+}
 .courses__block-title {
   margin-bottom: 34px;
 }
@@ -469,6 +486,11 @@ body {
 .bestsellers__block {
   margin-bottom: 30px;
 }
+@media screen and (max-width: 1150px) {
+  .bestsellers__block {
+    margin: 0px 10px 30px 10px;
+  }
+}
 .bestsellers__title {
   margin-bottom: 30px;
 }
@@ -500,10 +522,23 @@ body {
   }
 }
 .skills__card {
-  max-width: 378px;
+  width: 378px;
   padding: 70px 0;
   text-align: center;
   margin-bottom: 25px;
+}
+@media screen and (max-width: 1100px) {
+  .skills__card {
+    margin: 0 10px 25px 10px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .skills__card {
+    flex: 0 0 auto;
+  }
+}
+.skills__card-text {
+  padding: 0 10px;
 }
 .skills__card-img {
   margin-bottom: 32px;
@@ -678,16 +713,20 @@ body {
   }
 }
 .blog__block:not(:last-child) {
-  margin-right: 43px;
+  margin-right: 40px;
 }
 @media screen and (max-width: 1080px) {
-  .blog__block:not(:last-child) {
-    margin: 0 0px 30px 0;
+  .blog__block:nth-child(1) {
+    display: none;
   }
 }
-@media screen and (max-width: 755px) {
-  .blog__block:not(:last-child) {
-    margin: 0 0px 30px 0;
+@media screen and (max-width: 800px) {
+  .blog__block {
+    flex: 0 0 362px;
+    margin-right: 0;
+  }
+  .blog__block:nth-child(2) {
+    display: none;
   }
 }
 .blog__info {
